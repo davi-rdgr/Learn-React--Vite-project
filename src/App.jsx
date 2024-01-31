@@ -8,6 +8,10 @@ import FirstComponent from './components/FirstComponent.jsx'
 import ShowUserName from './components/ShowUserName.jsx'
 import CarDetalils from './components/CarDetalils.jsx'
 import Fragments from './components/Fragments.jsx'
+import Container from './components/Container.jsx'
+import ExecuteFunction from './components/ExecuteFunction.jsx'
+import Message from './components/Message.jsx'
+import ChangeMessageState from './components/ChangeMessageState.jsx'
 
 
 function App() {
@@ -18,6 +22,17 @@ function App() {
     { id: 2, brand: "Porshe", Color: "Preta", newCarro: true, km: 3120 },
     { id: 3, brand: "Lamburguini", Color: "Vermelha", newCarro: false, km: 9187 },
   ]
+
+  function showMessage() {
+    console.log("Evento do componente pai")
+  }
+
+  const [messege, setMessege] = useState("")
+
+  const handleMessege = (msg) => {
+    setMessege(msg);
+  }
+
   return (
     <div>
       <h1>First Component test</h1>
@@ -32,12 +47,23 @@ function App() {
 
       {/* loop em array de objetos */}
       {cars.map((car) => (
-        <CarDetalils brand={car.brand} color={car.color} km={car.km} newCarro={car.newCarro} />
+        <CarDetalils id={car.id} brand={car.brand} color={car.color} km={car.km} newCarro={car.newCarro} />
       ))}
 
-        {/* fragments */}
-        <Fragments />
+      {/* fragments */}
+      <Fragments />
 
+      {/* Childres */}
+      <Container>
+        <p>este é o conteúdo</p>
+      </Container>
+
+      {/* Executar função */}
+      <ExecuteFunction myFunction={showMessage} />
+
+      {/* State lift */}
+      <Message msg={messege} />
+      <ChangeMessageState handleMessege={handleMessege} />
 
       <h1 className='puxavai'></h1>
     </div>
