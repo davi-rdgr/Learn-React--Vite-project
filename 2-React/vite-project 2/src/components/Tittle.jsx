@@ -4,7 +4,7 @@ import styles from "./Tittle.module.css"
 const Tittle = () => {
     return (
         <div>
-            <h1 className={styles['styles-h1']}>Meu título com CSS Modules</h1>
+            <h1 className={styles['styles_h1']}>Meu título com CSS Modules</h1>
         </div>
     )
 }
