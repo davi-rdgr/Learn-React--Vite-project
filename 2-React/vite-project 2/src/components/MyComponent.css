@@ -1,0 +1,13 @@
+h1 {
+    color: rgb(1, 97, 1);
+    font-size: 20px;
+}
+
+.h1-MyComponente {
+    color: aquamarine;
+}
+
+.p-MyComponente {
+    color: blue;
+    background-color: white;
+}
